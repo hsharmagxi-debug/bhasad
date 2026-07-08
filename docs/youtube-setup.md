@@ -18,7 +18,13 @@ Run the local helper and approve access with the YouTube channel owner account:
 python scripts/get_youtube_refresh_token.py --credentials /path/to/credentials.json
 ```
 
-The helper prints the values needed by GitHub Actions:
+On Windows PowerShell, this helper can also store the values directly as GitHub Actions secrets:
+
+```powershell
+.\scripts\get_youtube_refresh_token.ps1 -Credentials C:\path\to\client_secret.json -SetGitHubSecrets
+```
+
+The helpers generate the values needed by GitHub Actions:
 
 - client ID
 - client secret
@@ -43,6 +49,8 @@ Run live only after `scripts/descriptions.json` contains real video IDs:
 ```bash
 python scripts/update_yt_desc.py --descriptions scripts/descriptions.json
 ```
+
+Placeholder keys like `VIDEO_ID_1` are skipped by the updater. Replace them with real YouTube video IDs before running a live update.
 
 ## GitHub Secrets
 

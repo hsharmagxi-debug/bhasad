@@ -95,13 +95,21 @@ def update_video_description(youtube: Any, video_id: str, description: str) -> N
 
 def run(descriptions_path: Path, dry_run: bool) -> int:
     descriptions = load_descriptions(descriptions_path)
+    placeholders = [video_id for video_id in descriptions if video_id.startswith("VIDEO_ID")]
     planned = {
         video_id: build_description(description)
         for video_id, description in descriptions.items()
-        if description
+        if description and video_id not in placeholders
     }
 
-    skipped = [video_id for video_id, description in descriptions.items() if not description]
+    for video_id in placeholders:
+        print(f"SKIP {video_id}: placeholder video ID")
+
+    skipped = [
+        video_id
+        for video_id, description in descriptions.items()
+        if not description and video_id not in placeholders
+    ]
     for video_id in skipped:
         print(f"SKIP {video_id}: empty description")
 
