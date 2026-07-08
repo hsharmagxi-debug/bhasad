@@ -1,0 +1,23 @@
+name: Analysis Request
+description: Track one business, KPI, or automation analysis.
+title: "Analysis: "
+labels:
+  - analysis
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What decision should this analysis support?
+    validations:
+      required: true
+  - type: textarea
+    id: inputs
+    attributes:
+      label: Inputs
+      description: Data sources, links, assumptions, or constraints.
+  - type: textarea
+    id: output
+    attributes:
+      label: Expected output
+      description: Dashboard, memo, video, script, issue, or automation.

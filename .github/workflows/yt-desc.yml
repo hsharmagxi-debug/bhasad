@@ -1,0 +1,49 @@
+name: Update YouTube Descriptions
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Run without updating YouTube"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/descriptions.json"
+      - "scripts/update_yt_desc.py"
+      - ".github/workflows/yt-desc.yml"
+
+jobs:
+  update-descriptions:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Update descriptions
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "false" ]; then
+            python scripts/update_yt_desc.py --descriptions scripts/descriptions.json
+          else
+            python scripts/update_yt_desc.py --descriptions scripts/descriptions.json --dry-run
+          fi

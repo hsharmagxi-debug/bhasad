@@ -1,0 +1,41 @@
+name: New Video
+description: Plan one Bhasad video from idea to publish.
+title: "Video: "
+labels:
+  - content
+body:
+  - type: input
+    id: working_title
+    attributes:
+      label: Working title
+    validations:
+      required: true
+  - type: dropdown
+    id: format
+    attributes:
+      label: Format
+      options:
+        - Signal Explainer
+        - Build Log
+        - Business Map
+    validations:
+      required: true
+  - type: textarea
+    id: promise
+    attributes:
+      label: Viewer promise
+      description: What clear outcome will the viewer get?
+    validations:
+      required: true
+  - type: textarea
+    id: production
+    attributes:
+      label: Production checklist
+      value: |
+        - [ ] Outline
+        - [ ] Script or talking points
+        - [ ] Recording
+        - [ ] Edit
+        - [ ] Thumbnail
+        - [ ] Description added to scripts/descriptions.json
+        - [ ] Published

@@ -1,0 +1,6 @@
+{
+  "_comment": "Map YouTube video IDs to English descriptions. Empty descriptions are skipped.",
+  "VIDEO_ID_1": "Replace this with the final English description for the video.",
+  "VIDEO_ID_2": "",
+  "VIDEO_ID_3": ""
+}

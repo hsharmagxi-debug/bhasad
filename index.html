@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Bhasad turns confusing business, AI, and analytics questions into sharp, useful explainers.">
+    <title>Bhasad | So Many Questions. One Clear Signal.</title>
+    <style>
+      :root {
+        --ink: #161616;
+        --muted: #5b6170;
+        --paper: #fbfaf7;
+        --line: #d8d2c4;
+        --accent: #e23f2f;
+        --accent-dark: #a92820;
+        --teal: #167c80;
+        --gold: #d6a739;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      header {
+        border-bottom: 1px solid var(--line);
+        background: rgba(251, 250, 247, 0.92);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      nav {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 16px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .brand {
+        font-weight: 800;
+        font-size: 1.1rem;
+        letter-spacing: 0;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 18px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+      }
+
+      main {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 56px 24px;
+      }
+
+      .hero {
+        min-height: 72vh;
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+        align-items: center;
+        gap: 40px;
+        padding-bottom: 36px;
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 760px;
+        font-size: clamp(3rem, 9vw, 6.8rem);
+        line-height: 0.9;
+        letter-spacing: 0;
+      }
+
+      .hero p {
+        margin: 24px 0 0;
+        max-width: 620px;
+        color: var(--muted);
+        font-size: clamp(1.08rem, 2vw, 1.35rem);
+      }
+
+      .actions {
+        margin-top: 32px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .button {
+        border: 1px solid var(--ink);
+        border-radius: 8px;
+        padding: 12px 16px;
+        text-decoration: none;
+        font-weight: 700;
+        min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .button.primary {
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .signal-board {
+        border-left: 4px solid var(--accent);
+        padding: 24px;
+        background: #ffffff;
+        box-shadow: 0 18px 45px rgba(22, 22, 22, 0.08);
+      }
+
+      .signal-board h2 {
+        margin: 0 0 16px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        color: var(--accent-dark);
+      }
+
+      .signal-board ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 14px;
+      }
+
+      .signal-board li {
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 14px;
+        color: var(--muted);
+      }
+
+      section {
+        padding: 56px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      .section-title {
+        margin: 0 0 24px;
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        line-height: 1;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+        padding: 20px;
+        min-height: 170px;
+      }
+
+      .card h3 {
+        margin: 0 0 10px;
+        font-size: 1.1rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 28px 24px;
+        color: var(--muted);
+      }
+
+      footer div {
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+
+      @media (max-width: 760px) {
+        nav {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav-links {
+          flex-wrap: wrap;
+        }
+
+        main {
+          padding-top: 34px;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: auto;
+        }
+
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Main navigation">
+        <div class="brand">Bhasad</div>
+        <div class="nav-links">
+          <a href="#formats">Formats</a>
+          <a href="#automation">Automation</a>
+          <a href="https://bhasad.org">bhasad.org</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <h1 id="hero-title">Bhasad</h1>
+          <p>So many questions. One clear signal. Bhasad breaks down AI, business, analytics, and digital growth without hiding behind jargon.</p>
+          <div class="actions">
+            <a class="button primary" href="https://www.youtube.com/" aria-label="Open the Bhasad YouTube channel">Watch on YouTube</a>
+            <a class="button" href="#formats">Explore formats</a>
+          </div>
+        </div>
+        <aside class="signal-board" aria-label="Editorial signals">
+          <h2>Editorial Signal</h2>
+          <ul>
+            <li>Explain one confusing business or AI question at a time.</li>
+            <li>Show practical dashboards, workflows, and automation examples.</li>
+            <li>Connect every video back to useful next steps on bhasad.org.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section id="formats" aria-labelledby="formats-title">
+        <h2 class="section-title" id="formats-title">Content Formats</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Signal Explainers</h3>
+            <p>Sharp breakdowns of messy questions in AI, analytics, startups, and growth.</p>
+          </article>
+          <article class="card">
+            <h3>Build Logs</h3>
+            <p>Practical episodes showing automation, dashboards, and product workflows being built.</p>
+          </article>
+          <article class="card">
+            <h3>Business Maps</h3>
+            <p>Strategy videos that connect audience, offers, pricing, operations, and KPIs.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="automation" aria-labelledby="automation-title">
+        <h2 class="section-title" id="automation-title">Automation Stack</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>YouTube Descriptions</h3>
+            <p>Video descriptions are managed through a versioned JSON file and a dry-run-first updater.</p>
+          </article>
+          <article class="card">
+            <h3>Website Deploys</h3>
+            <p>GitHub Pages publishes the latest validated site on every main-branch update.</p>
+          </article>
+          <article class="card">
+            <h3>Audit Loop</h3>
+            <p>Content checks and lightweight security scans keep the repo clean before publishing.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>Bhasad is built for clear thinking, practical automation, and measurable growth. Visit <a href="https://bhasad.org">bhasad.org</a>.</div>
+    </footer>
+  </body>
+</html>

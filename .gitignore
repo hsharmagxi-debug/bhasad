@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+credentials.json
+token.json
+yt_creds.json
+client_secret*.json
+.DS_Store
+Thumbs.db

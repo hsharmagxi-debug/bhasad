@@ -1,0 +1,25 @@
+{
+  "cadence": {
+    "long_form_per_week": 2,
+    "shorts_per_week": 5,
+    "newsletter_or_blog_per_week": 1
+  },
+  "formats": [
+    {
+      "name": "Signal Explainer",
+      "goal": "Answer one confusing AI, business, or analytics question.",
+      "target_length_minutes": 8
+    },
+    {
+      "name": "Build Log",
+      "goal": "Show a practical automation, dashboard, or workflow being built.",
+      "target_length_minutes": 12
+    },
+    {
+      "name": "Business Map",
+      "goal": "Connect audience, offer, pricing, funnel, and KPIs.",
+      "target_length_minutes": 15
+    }
+  ],
+  "backlog": []
+}
