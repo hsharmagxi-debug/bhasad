@@ -1,296 +1,986 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Bhasad turns confusing business, AI, and analytics questions into sharp, useful explainers.">
-    <title>Bhasad | So Many Questions. One Clear Signal.</title>
+    <meta name="description" content="Bhasad brand identity, YouTube channel strategy, automation pipeline, and TheKPIHub growth flywheel.">
+    <title>Bhasad | Brand Identity and Channel Strategy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300..800&display=swap" rel="stylesheet">
     <style>
-      :root {
-        --ink: #161616;
-        --muted: #5b6170;
-        --paper: #fbfaf7;
-        --line: #d8d2c4;
-        --accent: #e23f2f;
-        --accent-dark: #a92820;
-        --teal: #167c80;
-        --gold: #d6a739;
+      :root,
+      [data-theme="dark"] {
+        --color-bg: #0a0a0a;
+        --color-surface: #111111;
+        --color-surface-2: #1a1a1a;
+        --color-surface-offset: #222222;
+        --color-border: #2a2a2a;
+        --color-text: #f0ede8;
+        --color-text-muted: #888880;
+        --color-text-faint: #4d4d47;
+        --color-primary: #ff3c00;
+        --color-primary-hover: #ff5520;
+        --color-gold: #ffcc00;
+        --color-success: #4caf50;
+        --font-display: "Bebas Neue", Impact, sans-serif;
+        --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+        --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+        --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+        --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+        --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+        --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+        --text-hero: clamp(4.6rem, 16vw, 13rem);
+        --space-2: 0.5rem;
+        --space-3: 0.75rem;
+        --space-4: 1rem;
+        --space-5: 1.25rem;
+        --space-6: 1.5rem;
+        --space-8: 2rem;
+        --space-10: 2.5rem;
+        --space-12: 3rem;
+        --space-16: 4rem;
+        --space-20: 5rem;
+        --space-24: 6rem;
+        --radius-md: 0.5rem;
+        --radius-lg: 0.75rem;
+        --radius-xl: 1rem;
+        --radius-full: 9999px;
+        --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
       }
 
-      * {
+      *,
+      *::before,
+      *::after {
         box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
       }
 
       body {
-        margin: 0;
-        color: var(--ink);
-        background: var(--paper);
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        line-height: 1.5;
+        min-height: 100dvh;
+        overflow-x: hidden;
+        color: var(--color-text);
+        background: var(--color-bg);
+        font-family: var(--font-body);
+        font-size: var(--text-base);
+        line-height: 1.6;
       }
 
       a {
         color: inherit;
       }
 
-      header {
-        border-bottom: 1px solid var(--line);
-        background: rgba(251, 250, 247, 0.92);
-        position: sticky;
-        top: 0;
-        z-index: 10;
+      h1,
+      h2,
+      h3 {
+        text-wrap: balance;
+        line-height: 1.1;
       }
 
-      nav {
-        max-width: 1120px;
-        margin: 0 auto;
-        padding: 16px 24px;
+      p,
+      li {
+        text-wrap: pretty;
+      }
+
+      .site-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 20px;
+        gap: var(--space-6);
+        padding: var(--space-4) var(--space-8);
+        background: rgba(10, 10, 10, 0.9);
+        border-bottom: 1px solid var(--color-border);
+        backdrop-filter: blur(12px);
       }
 
-      .brand {
-        font-weight: 800;
-        font-size: 1.1rem;
-        letter-spacing: 0;
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        text-decoration: none;
+      }
+
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+        flex: 0 0 auto;
+      }
+
+      .nav-brand {
+        color: var(--color-text);
+        font-family: var(--font-display);
+        font-size: 1.65rem;
+        letter-spacing: 0.05em;
       }
 
       .nav-links {
         display: flex;
-        gap: 18px;
-        color: var(--muted);
-        font-size: 0.95rem;
+        align-items: center;
+        gap: var(--space-8);
       }
 
-      .nav-links a {
+      .nav-link {
+        color: var(--color-text-muted);
+        font-size: var(--text-sm);
         text-decoration: none;
+        transition: color var(--transition-interactive);
       }
 
-      main {
-        max-width: 1120px;
-        margin: 0 auto;
-        padding: 56px 24px;
+      .nav-link:hover {
+        color: var(--color-text);
+      }
+
+      .nav-cta {
+        padding: var(--space-2) var(--space-5);
+        border-radius: var(--radius-full);
+        color: white;
+        background: var(--color-primary);
+        font-size: var(--text-sm);
+        font-weight: 700;
+        text-decoration: none;
+        transition: background var(--transition-interactive);
+      }
+
+      .nav-cta:hover {
+        background: var(--color-primary-hover);
       }
 
       .hero {
-        min-height: 72vh;
-        display: grid;
-        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-        align-items: center;
-        gap: 40px;
-        padding-bottom: 36px;
-      }
-
-      h1 {
-        margin: 0;
-        max-width: 760px;
-        font-size: clamp(3rem, 9vw, 6.8rem);
-        line-height: 0.9;
-        letter-spacing: 0;
-      }
-
-      .hero p {
-        margin: 24px 0 0;
-        max-width: 620px;
-        color: var(--muted);
-        font-size: clamp(1.08rem, 2vw, 1.35rem);
-      }
-
-      .actions {
-        margin-top: 32px;
+        min-height: 100vh;
+        position: relative;
+        overflow: hidden;
         display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      .button {
-        border: 1px solid var(--ink);
-        border-radius: 8px;
-        padding: 12px 16px;
-        text-decoration: none;
-        font-weight: 700;
-        min-height: 48px;
-        display: inline-flex;
+        flex-direction: column;
         align-items: center;
+        justify-content: center;
+        padding: var(--space-24) var(--space-8) var(--space-16);
+        text-align: center;
       }
 
-      .button.primary {
-        background: var(--ink);
-        color: var(--paper);
+      .hero-bg,
+      .hero-noise {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
       }
 
-      .signal-board {
-        border-left: 4px solid var(--accent);
-        padding: 24px;
-        background: #ffffff;
-        box-shadow: 0 18px 45px rgba(22, 22, 22, 0.08);
+      .hero-bg {
+        background:
+          radial-gradient(ellipse 60% 50% at 50% 60%, rgba(255, 60, 0, 0.16), transparent 70%),
+          linear-gradient(180deg, rgba(255, 204, 0, 0.04), transparent 40%);
       }
 
-      .signal-board h2 {
-        margin: 0 0 16px;
-        font-size: 1rem;
+      .hero-noise {
+        opacity: 0.035;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      }
+
+      .hero > *:not(.hero-bg):not(.hero-noise) {
+        position: relative;
+      }
+
+      .eyebrow,
+      .section-label {
+        color: var(--color-primary);
+        font-size: var(--text-xs);
+        font-weight: 700;
+        letter-spacing: 0.25em;
         text-transform: uppercase;
-        color: var(--accent-dark);
       }
 
-      .signal-board ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: grid;
-        gap: 14px;
+      .hero-title {
+        margin-top: var(--space-4);
+        color: var(--color-text);
+        font-family: var(--font-display);
+        font-size: var(--text-hero);
+        letter-spacing: 0.06em;
+        line-height: 0.82;
       }
 
-      .signal-board li {
-        border-bottom: 1px solid var(--line);
-        padding-bottom: 14px;
-        color: var(--muted);
+      .hero-title span {
+        color: var(--color-primary);
+      }
+
+      .hero-subtitle {
+        margin-top: var(--space-4);
+        color: var(--color-text-muted);
+        font-family: var(--font-display);
+        font-size: clamp(1.5rem, 4vw, 3.5rem);
+        letter-spacing: 0.1em;
+      }
+
+      .hero-slogan-box {
+        max-width: 780px;
+        margin: var(--space-10) auto 0;
+        padding: var(--space-8) var(--space-12);
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-xl);
+        background: var(--color-surface);
+      }
+
+      .slogan-english {
+        margin-bottom: var(--space-3);
+        color: var(--color-gold);
+        font-family: var(--font-display);
+        font-size: clamp(1.8rem, 4vw, 3.2rem);
+        letter-spacing: 0.08em;
+        line-height: 1.1;
+      }
+
+      .slogan-sub {
+        color: var(--color-text-muted);
+        font-size: var(--text-base);
+      }
+
+      .slogan-link,
+      .inline-link,
+      footer a {
+        color: var(--color-primary);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .slogan-link:hover,
+      .inline-link:hover,
+      footer a:hover {
+        color: var(--color-primary-hover);
+      }
+
+      .hero-scroll {
+        margin-top: var(--space-8);
+        color: var(--color-text-faint);
+        font-size: var(--text-xs);
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
       }
 
       section {
-        padding: 56px 0;
-        border-top: 1px solid var(--line);
+        padding: clamp(var(--space-16), 8vw, var(--space-24)) var(--space-8);
       }
 
-      .section-title {
-        margin: 0 0 24px;
-        font-size: clamp(1.8rem, 4vw, 3rem);
-        line-height: 1;
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
-      }
-
-      .card {
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: #ffffff;
-        padding: 20px;
-        min-height: 170px;
-      }
-
-      .card h3 {
-        margin: 0 0 10px;
-        font-size: 1.1rem;
-      }
-
-      .card p {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      footer {
-        border-top: 1px solid var(--line);
-        padding: 28px 24px;
-        color: var(--muted);
-      }
-
-      footer div {
-        max-width: 1120px;
+      .section-inner {
+        max-width: 960px;
         margin: 0 auto;
       }
 
-      @media (max-width: 760px) {
-        nav {
-          align-items: flex-start;
-          flex-direction: column;
+      .section-inner-wide {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        margin: var(--space-4) 0 var(--space-6);
+        font-family: var(--font-display);
+        font-size: var(--text-2xl);
+        letter-spacing: 0.04em;
+      }
+
+      .section-body {
+        max-width: 68ch;
+        color: var(--color-text-muted);
+        font-size: var(--text-base);
+      }
+
+      .slogan-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+        gap: var(--space-4);
+        margin-top: var(--space-8);
+      }
+
+      .slogan-card,
+      .pipeline-step,
+      .growth-card,
+      .outro-section,
+      .flywheel {
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        background: var(--color-surface);
+      }
+
+      .slogan-card {
+        min-height: 230px;
+        padding: var(--space-6);
+        transition: border-color var(--transition-interactive), transform var(--transition-interactive);
+      }
+
+      .slogan-card:hover {
+        border-color: var(--color-primary);
+        transform: translateY(-2px);
+      }
+
+      .slogan-card-num,
+      .growth-card-month,
+      .outro-meta-label {
+        color: var(--color-text-faint);
+        font-size: var(--text-xs);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      .slogan-card-english {
+        margin: var(--space-3) 0;
+        color: var(--color-gold);
+        font-family: var(--font-display);
+        font-size: var(--text-xl);
+        letter-spacing: 0.06em;
+        line-height: 1.1;
+      }
+
+      .slogan-card-context {
+        margin-bottom: var(--space-4);
+        color: var(--color-text-faint);
+        font-size: var(--text-xs);
+      }
+
+      .slogan-card-link {
+        display: inline-block;
+        border-bottom: 1px solid currentColor;
+        color: var(--color-primary);
+        font-size: var(--text-sm);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .outro-section {
+        overflow: hidden;
+        margin-top: var(--space-8);
+        border-radius: var(--radius-xl);
+      }
+
+      .outro-screen {
+        min-height: 430px;
+        aspect-ratio: 16 / 9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: var(--space-8);
+        background: #000000;
+        text-align: center;
+      }
+
+      .outro-chaos-text {
+        margin-bottom: var(--space-3);
+        color: var(--color-gold);
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 6vw, 5rem);
+        letter-spacing: 0.06em;
+        line-height: 1;
+        animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
         }
 
+        50% {
+          opacity: 0.72;
+        }
+      }
+
+      .outro-punchline {
+        margin-bottom: var(--space-6);
+        color: #888888;
+        font-size: clamp(0.8rem, 2vw, 1.3rem);
+        font-style: italic;
+      }
+
+      .outro-logo-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-3);
+      }
+
+      .outro-logo-svg {
+        width: 82px;
+        height: 82px;
+      }
+
+      .outro-url {
+        color: var(--color-primary);
+        font-family: var(--font-display);
+        font-size: clamp(1rem, 3vw, 1.8rem);
+        letter-spacing: 0.15em;
+      }
+
+      .outro-tagline {
+        color: #555555;
+        font-size: clamp(0.65rem, 1.5vw, 0.85rem);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .outro-meta {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: var(--space-5);
+        padding: var(--space-5) var(--space-6);
+        background: var(--color-surface-offset);
+      }
+
+      .outro-meta-value {
+        margin-top: 4px;
+        color: var(--color-text);
+        font-size: var(--text-base);
+        font-weight: 800;
+      }
+
+      .pipeline {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+        margin-top: var(--space-8);
+      }
+
+      .pipeline-step {
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        gap: var(--space-5);
+        align-items: start;
+        padding: var(--space-5);
+      }
+
+      .step-num {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        border-radius: var(--radius-full);
+        color: var(--color-primary);
+        background: var(--color-surface-offset);
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+      }
+
+      .step-content h3 {
+        margin-bottom: 0.25rem;
+        font-size: var(--text-base);
+      }
+
+      .step-content p {
+        color: var(--color-text-muted);
+        font-size: var(--text-sm);
+      }
+
+      .step-tool {
+        display: inline-block;
+        margin-top: var(--space-2);
+        padding: 2px 8px;
+        border-radius: var(--radius-full);
+        color: var(--color-gold);
+        background: var(--color-surface-offset);
+        font-size: var(--text-xs);
+        font-weight: 700;
+        letter-spacing: 0.05em;
+      }
+
+      .cost-table {
+        width: 100%;
+        margin-top: var(--space-8);
+        border-collapse: collapse;
+      }
+
+      .cost-table th,
+      .cost-table td {
+        padding: var(--space-3) var(--space-4);
+        border-bottom: 1px solid var(--color-border);
+        font-size: var(--text-sm);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .cost-table th {
+        color: var(--color-text-muted);
+        font-size: var(--text-xs);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .cost-table td:last-child,
+      .cost-table td:nth-child(3) {
+        font-weight: 800;
+        text-align: right;
+      }
+
+      .free-badge {
+        color: var(--color-success);
+      }
+
+      .cost-badge {
+        color: var(--color-gold);
+      }
+
+      .total-row td {
+        border-top: 2px solid var(--color-border);
+        color: var(--color-text);
+        font-weight: 800;
+      }
+
+      .growth-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-4);
+        margin-top: var(--space-8);
+      }
+
+      .growth-card {
+        min-height: 180px;
+        padding: var(--space-5);
+        text-align: center;
+      }
+
+      .growth-card.featured {
+        border-color: var(--color-gold);
+      }
+
+      .growth-card-subs {
+        margin-top: var(--space-2);
+        color: var(--color-gold);
+        font-family: var(--font-display);
+        font-size: var(--text-xl);
+        letter-spacing: 0.04em;
+      }
+
+      .growth-card-rev {
+        margin-top: 0.25rem;
+        color: var(--color-primary);
+        font-size: var(--text-sm);
+        font-weight: 800;
+      }
+
+      .growth-card-note {
+        margin-top: 0.25rem;
+        color: var(--color-text-faint);
+        font-size: var(--text-xs);
+      }
+
+      .flywheel {
+        margin-top: var(--space-8);
+        padding: var(--space-10);
+        border-radius: var(--radius-xl);
+        text-align: center;
+      }
+
+      .flywheel h3 {
+        margin-top: var(--space-2);
+        font-family: var(--font-display);
+        font-size: var(--text-xl);
+        letter-spacing: 0.04em;
+      }
+
+      .flywheel-steps {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-3);
+        margin-top: var(--space-6);
+      }
+
+      .fw-step {
+        padding: var(--space-3) var(--space-5);
+        border-radius: var(--radius-md);
+        background: var(--color-surface-offset);
+        font-size: var(--text-sm);
+        font-weight: 800;
+      }
+
+      .fw-arrow {
+        color: var(--color-primary);
+        font-size: 1.2rem;
+        font-weight: 800;
+      }
+
+      .fw-highlight {
+        border: 1px solid var(--color-primary);
+        color: var(--color-primary);
+      }
+
+      .fw-gold {
+        border: 1px solid var(--color-gold);
+        color: var(--color-gold);
+      }
+
+      footer {
+        padding: var(--space-8);
+        border-top: 1px solid var(--color-border);
+        color: var(--color-text-faint);
+        font-size: var(--text-xs);
+        text-align: center;
+      }
+
+      @media (max-width: 820px) {
         .nav-links {
-          flex-wrap: wrap;
+          display: none;
         }
 
-        main {
-          padding-top: 34px;
+        .site-nav {
+          padding: var(--space-3) var(--space-4);
+        }
+
+        section {
+          padding: var(--space-12) var(--space-4);
         }
 
         .hero {
-          grid-template-columns: 1fr;
-          min-height: auto;
+          padding: var(--space-20) var(--space-4) var(--space-12);
         }
 
-        .grid {
+        .hero-slogan-box,
+        .flywheel {
+          padding: var(--space-6);
+        }
+
+        .pipeline-step {
           grid-template-columns: 1fr;
+        }
+
+        .growth-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 540px) {
+        .growth-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cost-table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
         }
       }
     </style>
   </head>
   <body>
-    <header>
-      <nav aria-label="Main navigation">
-        <div class="brand">Bhasad</div>
-        <div class="nav-links">
-          <a href="#formats">Formats</a>
-          <a href="#automation">Automation</a>
-          <a href="https://bhasad.org">bhasad.org</a>
-        </div>
-      </nav>
-    </header>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="nav-logo" href="#top" aria-label="Bhasad home">
+        <svg class="logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="18" cy="18" r="17" stroke="#ff3c00" stroke-width="2"></circle>
+          <text x="18" y="23" font-family="Inter, sans-serif" font-size="11" font-weight="900" fill="#ff3c00" text-anchor="middle">BH</text>
+        </svg>
+        <span class="nav-brand">BHASAD</span>
+      </a>
+      <div class="nav-links">
+        <a href="#slogan" class="nav-link">Slogan</a>
+        <a href="#outro" class="nav-link">Outro</a>
+        <a href="#pipeline" class="nav-link">Pipeline</a>
+        <a href="#growth" class="nav-link">Growth</a>
+        <a href="https://bhasad.org" class="nav-cta" target="_blank" rel="noopener noreferrer">bhasad.org</a>
+      </div>
+    </nav>
 
-    <main>
+    <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <div>
-          <h1 id="hero-title">Bhasad</h1>
-          <p>So many questions. One clear signal. Bhasad breaks down AI, business, analytics, and digital growth without hiding behind jargon.</p>
-          <div class="actions">
-            <a class="button primary" href="https://www.youtube.com/" aria-label="Open the Bhasad YouTube channel">Watch on YouTube</a>
-            <a class="button" href="#formats">Explore formats</a>
+        <div class="hero-bg"></div>
+        <div class="hero-noise"></div>
+        <div class="eyebrow">YouTube Channel Brand Identity</div>
+        <h1 class="hero-title" id="hero-title">BHA<span>SAD</span></h1>
+        <div class="hero-subtitle">BAADDI... SO MANY.</div>
+        <div class="hero-slogan-box">
+          <div class="slogan-english">"So Many Questions...<br>One Hell Of A Confusion!"</div>
+          <p class="slogan-sub">The signature sign-off that ends every video, followed by <a class="slogan-link" href="https://bhasad.org" target="_blank" rel="noopener noreferrer">bhasad.org</a>.</p>
+        </div>
+        <div class="hero-scroll">Scroll to explore the full brand playbook</div>
+      </section>
+
+      <section id="slogan">
+        <div class="section-inner">
+          <div class="section-label">Brand Signature</div>
+          <h2 class="section-title">The Slogan System</h2>
+          <p class="section-body">Every video ends with the same English punchline architecture: a tense question, a sharp emotional twist, and a clean bhasad.org logo slam.</p>
+
+          <div class="slogan-grid">
+            <article class="slogan-card">
+              <div class="slogan-card-num">Variant 01 - Default</div>
+              <h3 class="slogan-card-english">"So Many Questions... One Hell Of A Confusion!"</h3>
+              <p class="slogan-card-context">Universal closer. Works on every topic.</p>
+              <a href="https://bhasad.org" class="slogan-card-link" target="_blank" rel="noopener noreferrer">bhasad.org</a>
+            </article>
+
+            <article class="slogan-card">
+              <div class="slogan-card-num">Variant 02 - Deception Topic</div>
+              <h3 class="slogan-card-english">"So Many Lies... Which One Was Real?!"</h3>
+              <p class="slogan-card-context">Use on system, government, history, and hidden incentives.</p>
+              <a href="https://bhasad.org" class="slogan-card-link" target="_blank" rel="noopener noreferrer">bhasad.org</a>
+            </article>
+
+            <article class="slogan-card">
+              <div class="slogan-card-num">Variant 03 - Missed Signs</div>
+              <h3 class="slogan-card-english">"So Many Signs... And You Still Missed Them All!"</h3>
+              <p class="slogan-card-context">Use on AI jobs, economy, and opportunity videos.</p>
+              <a href="https://bhasad.org" class="slogan-card-link" target="_blank" rel="noopener noreferrer">bhasad.org</a>
+            </article>
+
+            <article class="slogan-card">
+              <div class="slogan-card-num">Variant 04 - Layers</div>
+              <h3 class="slogan-card-english">"So Many Layers... And We Only See One!"</h3>
+              <p class="slogan-card-context">Use on deep dives, science, markets, and system analysis.</p>
+              <a href="https://bhasad.org" class="slogan-card-link" target="_blank" rel="noopener noreferrer">bhasad.org</a>
+            </article>
+
+            <article class="slogan-card">
+              <div class="slogan-card-num">Variant 05 - Answers</div>
+              <h3 class="slogan-card-english">"So Many Answers... But Zero Make Sense!"</h3>
+              <p class="slogan-card-context">Use on politics, business, money, and mixed advice topics.</p>
+              <a href="https://bhasad.org" class="slogan-card-link" target="_blank" rel="noopener noreferrer">bhasad.org</a>
+            </article>
+
+            <article class="slogan-card">
+              <div class="slogan-card-num">Variant 06 - Truth</div>
+              <h3 class="slogan-card-english">"So Much Truth... It Hurts To Know!"</h3>
+              <p class="slogan-card-context">Use on career, AI disruption, and harsh reality videos.</p>
+              <a href="https://bhasad.org" class="slogan-card-link" target="_blank" rel="noopener noreferrer">bhasad.org</a>
+            </article>
           </div>
         </div>
-        <aside class="signal-board" aria-label="Editorial signals">
-          <h2>Editorial Signal</h2>
-          <ul>
-            <li>Explain one confusing business or AI question at a time.</li>
-            <li>Show practical dashboards, workflows, and automation examples.</li>
-            <li>Connect every video back to useful next steps on bhasad.org.</li>
-          </ul>
-        </aside>
       </section>
 
-      <section id="formats" aria-labelledby="formats-title">
-        <h2 class="section-title" id="formats-title">Content Formats</h2>
-        <div class="grid">
-          <article class="card">
-            <h3>Signal Explainers</h3>
-            <p>Sharp breakdowns of messy questions in AI, analytics, startups, and growth.</p>
-          </article>
-          <article class="card">
-            <h3>Build Logs</h3>
-            <p>Practical episodes showing automation, dashboards, and product workflows being built.</p>
-          </article>
-          <article class="card">
-            <h3>Business Maps</h3>
-            <p>Strategy videos that connect audience, offers, pricing, operations, and KPIs.</p>
-          </article>
+      <section id="outro">
+        <div class="section-inner">
+          <div class="section-label">Video End Card</div>
+          <h2 class="section-title">The Outro Screen</h2>
+          <p class="section-body">A five-second burn-in system: black screen, gold slogan, red logo, one link. No clutter, no second message competing for attention.</p>
+
+          <div class="outro-section">
+            <div class="outro-screen">
+              <div class="outro-chaos-text">"So Many Questions...<br>One Hell Of A Confusion!"</div>
+              <div class="outro-punchline">Think about it. Seriously.</div>
+              <div class="outro-logo-area">
+                <svg class="outro-logo-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="40" cy="40" r="38" stroke="#ff3c00" stroke-width="3"></circle>
+                  <circle cx="40" cy="40" r="32" fill="#ff3c00" fill-opacity="0.08"></circle>
+                  <text x="40" y="48" font-family="Inter, sans-serif" font-size="20" font-weight="900" fill="#ff3c00" text-anchor="middle">BH</text>
+                </svg>
+                <div class="outro-url">BHASAD.ORG</div>
+                <div class="outro-tagline">Confusion is the beginning of understanding</div>
+              </div>
+            </div>
+            <div class="outro-meta">
+              <div>
+                <div class="outro-meta-label">Duration</div>
+                <div class="outro-meta-value">5 seconds</div>
+              </div>
+              <div>
+                <div class="outro-meta-label">Background</div>
+                <div class="outro-meta-value">Pure Black</div>
+              </div>
+              <div>
+                <div class="outro-meta-label">Slogan Color</div>
+                <div class="outro-meta-value" style="color: var(--color-gold);">Gold</div>
+              </div>
+              <div>
+                <div class="outro-meta-label">Logo Color</div>
+                <div class="outro-meta-value" style="color: var(--color-primary);">Bhasad Red</div>
+              </div>
+              <div>
+                <div class="outro-meta-label">Link</div>
+                <div class="outro-meta-value"><a class="inline-link" href="https://bhasad.org" target="_blank" rel="noopener noreferrer">bhasad.org</a></div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="automation" aria-labelledby="automation-title">
-        <h2 class="section-title" id="automation-title">Automation Stack</h2>
-        <div class="grid">
-          <article class="card">
-            <h3>YouTube Descriptions</h3>
-            <p>Video descriptions are managed through a versioned JSON file and a dry-run-first updater.</p>
-          </article>
-          <article class="card">
-            <h3>Website Deploys</h3>
-            <p>GitHub Pages publishes the latest validated site on every main-branch update.</p>
-          </article>
-          <article class="card">
-            <h3>Audit Loop</h3>
-            <p>Content checks and lightweight security scans keep the repo clean before publishing.</p>
-          </article>
+      <section id="pipeline">
+        <div class="section-inner">
+          <div class="section-label">Zero-Cost Automation</div>
+          <h2 class="section-title">Daily Content Pipeline</h2>
+          <p class="section-body">A practical production loop from trend to upload. Start on free tiers, then upgrade only when the channel starts proving repeatable traction.</p>
+
+          <div class="pipeline">
+            <article class="pipeline-step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h3>Trend Research - 6 AM Trigger</h3>
+                <p>Pull the strongest AI, business, money, and tech confusion topics into the content backlog.</p>
+                <span class="step-tool">Make.com + ChatGPT</span>
+              </div>
+            </article>
+            <article class="pipeline-step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h3>Script Generation</h3>
+                <p>Generate the first draft with hook, escalation, reveal, practical lesson, and the rotating English slogan closer.</p>
+                <span class="step-tool">Prompt Pack + Editorial Review</span>
+              </div>
+            </article>
+            <article class="pipeline-step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h3>Voiceover</h3>
+                <p>Produce narration, save the final audio asset, and track the version against the video issue.</p>
+                <span class="step-tool">ElevenLabs or Manual VO</span>
+              </div>
+            </article>
+            <article class="pipeline-step">
+              <div class="step-num">4</div>
+              <div class="step-content">
+                <h3>Video Assembly</h3>
+                <p>Combine narration, captions, supporting visuals, pacing edits, and the Bhasad outro screen.</p>
+                <span class="step-tool">CapCut + Pexels</span>
+              </div>
+            </article>
+            <article class="pipeline-step">
+              <div class="step-num">5</div>
+              <div class="step-content">
+                <h3>Thumbnail System</h3>
+                <p>Use the black, red, and gold identity with a direct visual promise and a short curiosity phrase.</p>
+                <span class="step-tool">Canva + Image Generator</span>
+              </div>
+            </article>
+            <article class="pipeline-step">
+              <div class="step-num">6</div>
+              <div class="step-content">
+                <h3>Description Automation</h3>
+                <p>Keep descriptions in version control, dry-run them first, then update YouTube through the Data API.</p>
+                <span class="step-tool">GitHub Actions + YouTube API</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="cost">
+        <div class="section-inner">
+          <div class="section-label">Investment Plan</div>
+          <h2 class="section-title">Minimum Cost Stack</h2>
+          <p class="section-body">Start lean, keep output consistent, and pay for upgrades only where the workflow is already creating measurable leverage.</p>
+
+          <table class="cost-table">
+            <thead>
+              <tr>
+                <th>Tool</th>
+                <th>Purpose</th>
+                <th>Month 1</th>
+                <th>Month 2+</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Make.com</td>
+                <td>Automation orchestration</td>
+                <td class="free-badge">Free</td>
+                <td class="cost-badge">INR 830</td>
+              </tr>
+              <tr>
+                <td>ChatGPT</td>
+                <td>Scripts, outlines, trend processing</td>
+                <td class="free-badge">Free</td>
+                <td class="free-badge">Free tier first</td>
+              </tr>
+              <tr>
+                <td>ElevenLabs</td>
+                <td>Voiceover production</td>
+                <td class="free-badge">Free tier</td>
+                <td class="cost-badge">INR 1,500</td>
+              </tr>
+              <tr>
+                <td>CapCut Desktop</td>
+                <td>Editing and captions</td>
+                <td class="free-badge">Free</td>
+                <td class="free-badge">Free</td>
+              </tr>
+              <tr>
+                <td>Canva</td>
+                <td>Thumbnail templates</td>
+                <td class="free-badge">Free</td>
+                <td class="free-badge">Free</td>
+              </tr>
+              <tr>
+                <td>YouTube Data API</td>
+                <td>Description updates and publishing workflows</td>
+                <td class="free-badge">Free</td>
+                <td class="free-badge">Free</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr class="total-row">
+                <td colspan="2">Total</td>
+                <td class="free-badge">INR 0</td>
+                <td class="cost-badge">INR 2,330</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+      <section id="growth">
+        <div class="section-inner-wide">
+          <div class="section-label">Channel to Business</div>
+          <h2 class="section-title">Growth Projection</h2>
+          <p class="section-body">The channel becomes the top of the funnel. Bhasad earns attention; bhasad.org captures intent; TheKPIHub converts that intent into analytics audits, dashboards, and subscriptions.</p>
+
+          <div class="growth-grid">
+            <article class="growth-card">
+              <div class="growth-card-month">Month 1</div>
+              <div class="growth-card-subs">500-2K</div>
+              <div class="growth-card-rev">INR 0</div>
+              <p class="growth-card-note">Content system, testing, consistency.</p>
+            </article>
+            <article class="growth-card">
+              <div class="growth-card-month">Month 3</div>
+              <div class="growth-card-subs">10K-25K</div>
+              <div class="growth-card-rev">First revenue</div>
+              <p class="growth-card-note">Early sponsorships, templates, audits.</p>
+            </article>
+            <article class="growth-card">
+              <div class="growth-card-month">Month 6</div>
+              <div class="growth-card-subs">50K-100K</div>
+              <div class="growth-card-rev">KPIHub traffic</div>
+              <p class="growth-card-note">Dashboard offers and case studies.</p>
+            </article>
+            <article class="growth-card featured">
+              <div class="growth-card-month">Month 12</div>
+              <div class="growth-card-subs" style="color: var(--color-primary);">500K+</div>
+              <div class="growth-card-rev" style="color: var(--color-gold);">Scaled funnel</div>
+              <p class="growth-card-note">Media, products, retainers, and MRR.</p>
+            </article>
+          </div>
+
+          <div class="flywheel">
+            <div class="section-label">The Business Flywheel</div>
+            <h3>How Bhasad Feeds TheKPIHub</h3>
+            <div class="flywheel-steps" aria-label="Bhasad business flywheel">
+              <div class="fw-step">Bhasad Video</div>
+              <div class="fw-arrow">-&gt;</div>
+              <div class="fw-step">Builds Audience</div>
+              <div class="fw-arrow">-&gt;</div>
+              <div class="fw-step fw-highlight">bhasad.org</div>
+              <div class="fw-arrow">-&gt;</div>
+              <div class="fw-step">KPIHub Audit</div>
+              <div class="fw-arrow">-&gt;</div>
+              <div class="fw-step fw-gold">Monthly Subscription</div>
+              <div class="fw-arrow">-&gt;</div>
+              <div class="fw-step">Funds More Content</div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <div>Bhasad is built for clear thinking, practical automation, and measurable growth. Visit <a href="https://bhasad.org">bhasad.org</a>.</div>
+      <p>Bhasad Brand Identity System. Built for <a href="https://bhasad.org" target="_blank" rel="noopener noreferrer">bhasad.org</a> and <a href="https://thekpihub.com" target="_blank" rel="noopener noreferrer">TheKPIHub.com</a>.</p>
     </footer>
   </body>
 </html>
